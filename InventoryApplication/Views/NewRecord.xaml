@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryApplication.Views.NewRecord"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Frame HeightRequest="100" BackgroundColor="#000" Margin="0,5,0,0" CornerRadius="20">
+                <Label Text="Inventory App" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#f0f0f0" FontSize="36"/>
+            </Frame>
+
+            <StackLayout Padding="0,10,0,0">
+                <Entry HeightRequest="50" x:Name="Name" Keyboard="Text" Placeholder="Name*" ClearButtonVisibility="WhileEditing"></Entry>
+
+                <Entry HeightRequest="50" x:Name="Surname" Keyboard="Text" Placeholder="Surname*" ClearButtonVisibility="WhileEditing"></Entry>
+
+                <Entry HeightRequest="50" x:Name="Producer" Keyboard="Text" Placeholder="Producer*" ClearButtonVisibility="WhileEditing"></Entry>
+
+                <Entry HeightRequest="50" x:Name="Model" Keyboard="Text" Placeholder="Model*" ClearButtonVisibility="WhileEditing"></Entry>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Entry WidthRequest="300" x:Name="RAM" Keyboard="Numeric" MaxLength="3" Placeholder="RAM*" ClearButtonVisibility="WhileEditing"></Entry>
+
+                <Picker VerticalTextAlignment="Center" SelectedIndex="0" Title="--Select--" WidthRequest="40" x:Name="ramPicker" HorizontalOptions="FillAndExpand">
+                    <Picker.Items>
+                        <x:String>GB</x:String>
+                        <x:String>TB</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Entry WidthRequest="300" x:Name="HDD" Keyboard="Numeric" MaxLength="3" Placeholder="HDD" ClearButtonVisibility="WhileEditing"></Entry>
+
+                <Picker WidthRequest="40" SelectedIndex="0" Title="--Select--" x:Name="hddPicker" HorizontalOptions="FillAndExpand">
+                    <Picker.Items>
+                        <x:String>GB</x:String>
+                        <x:String>TB</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Entry WidthRequest="300" x:Name="SSD" Keyboard="Numeric" MaxLength="3" Placeholder="SSD" ClearButtonVisibility="WhileEditing"></Entry>
+
+                <Picker WidthRequest="40" SelectedIndex="0" Title="--Select--" x:Name="ssdPicker" HorizontalOptions="FillAndExpand">
+                    <Picker.Items>
+                        <x:String>GB</x:String>
+                        <x:String>TB</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Clicked="addButton_Clicked" WidthRequest="160" Margin="0,0,10,0" HeightRequest="90" x:Name="addButton" TextColor="#f0f0f0" FontSize="18" Text="ADD" BackgroundColor="#000" CornerRadius="20"></Button>
+                <Button Clicked="resetButton_Clicked" WidthRequest="160" Margin="10,0,0,0" HeightRequest="90" x:Name="resetButton" TextColor="#f0f0f0" FontSize="18" Text="RESET" BackgroundColor="#000" CornerRadius="20"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

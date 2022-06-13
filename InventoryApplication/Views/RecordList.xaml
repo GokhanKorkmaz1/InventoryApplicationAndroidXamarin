@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryApplication.Views.RecordList">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lstView" RowHeight="80" ItemTapped="lstView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10" Spacing="10">
+                                <Label Text="{Binding Name}" TextColor="Black"></Label>
+                                <Label Text="{Binding Surname}" TextColor="Black"></Label>
+                                <Label Text="{Binding Producer}"></Label>
+                                <Label Text="{Binding Model}"></Label>
+                                <Label Text="{Binding Ram}"></Label>
+                                <Label Text="{Binding Hdd}"></Label>
+                                <Label Text="{Binding Ssd}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.FooterTemplate>
+                    <DataTemplate>
+                        <ContentView BackgroundColor="Aquamarine">
+                            <Label Margin="10" Text="deneme" TextColor="Blue" HorizontalTextAlignment="End"/>
+                        </ContentView>
+                    </DataTemplate>
+                </ListView.FooterTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

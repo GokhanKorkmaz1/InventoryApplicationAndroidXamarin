@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryApplication.Views.EditRecord">
+    <ContentPage.Content>
+        <StackLayout Padding="10" >
+            <StackLayout Orientation="Horizontal" Spacing="130">
+                <Button Clicked="Back_Clicked" BackgroundColor="DimGray" CornerRadius="20" HeightRequest="60" WidthRequest="120" x:Name="Back" ImageSource="back.png"></Button>
+                <Label TextColor="#000" IsVisible="False" BackgroundColor="DimGray" FontSize="22" Margin="0,0,10,0"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="140" x:Name="editInfo" Text="Editing"></Label>
+            </StackLayout>
+            <Frame HeightRequest="50" BackgroundColor="#000" Margin="0,5,0,0" CornerRadius="20">
+                <Label Text="Inventory App" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#f0f0f0" FontSize="28"/>
+            </Frame>
+            <StackLayout x:Name="entries" IsEnabled="False" >
+                <StackLayout Padding="0,10,0,0" >
+                    <Entry HeightRequest="50" x:Name="Name" Keyboard="Text" Placeholder="Name*" ClearButtonVisibility="WhileEditing"></Entry>
+
+                    <Entry HeightRequest="50" x:Name="Surname" Keyboard="Text" Placeholder="Surname*" ClearButtonVisibility="WhileEditing"></Entry>
+
+                    <Entry HeightRequest="50" x:Name="Producer" Keyboard="Text" Placeholder="Producer*" ClearButtonVisibility="WhileEditing"></Entry>
+
+                    <Entry HeightRequest="50" x:Name="Model" Keyboard="Text" Placeholder="Model*" ClearButtonVisibility="WhileEditing"></Entry>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Entry WidthRequest="300" TextChanged="RAM_TextChanged" x:Name="RAM" Keyboard="Numeric" MaxLength="3" Placeholder="RAM*" ClearButtonVisibility="WhileEditing"></Entry>
+
+                    <Picker SelectedIndexChanged="ramPicker_SelectedIndexChanged" VerticalTextAlignment="Center" SelectedIndex="0" Title="--Select--" WidthRequest="40" x:Name="ramPicker" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>GB</x:String>
+                            <x:String>TB</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Entry WidthRequest="300" TextChanged="HDD_TextChanged"  x:Name="HDD" Keyboard="Numeric" MaxLength="3" Placeholder="HDD" ClearButtonVisibility="WhileEditing"></Entry>
+
+                    <Picker SelectedIndexChanged="hddPicker_SelectedIndexChanged" WidthRequest="40" SelectedIndex="0" Title="--Select--" x:Name="hddPicker" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>GB</x:String>
+                            <x:String>TB</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry WidthRequest="300" TextChanged="SSD_TextChanged"  x:Name="SSD" Keyboard="Numeric" MaxLength="3" Placeholder="SSD" ClearButtonVisibility="WhileEditing"></Entry>
+
+                    <Picker SelectedIndexChanged="ssdPicker_SelectedIndexChanged" WidthRequest="40" SelectedIndex="0" Title="--Select--" x:Name="ssdPicker" HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>GB</x:String>
+                            <x:String>TB</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Clicked="editButton_Clicked" WidthRequest="160" Margin="0,0,10,0" HeightRequest="80" x:Name="editButton" TextColor="#f0f0f0" FontSize="18" Text="Edit" BackgroundColor="#000" CornerRadius="20"></Button>
+                <Button Clicked="deleteButton_Clicked" WidthRequest="160" Margin="10,0,0,0" HeightRequest="80" x:Name="deleteButton" TextColor="#f0f0f0" FontSize="18" Text="Delete" BackgroundColor="#000" CornerRadius="20"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
